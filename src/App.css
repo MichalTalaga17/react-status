@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
+@import url("https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+body{
+    margin-top:20px;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 200;
+    font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tracking__main {
+    padding: 30px 0;
+    background-color: #f5f5f5;
+    font-size: 36px;
+
+}
+.tracking__main--title {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #606975;
+    text-align: center;
+}
+.tracking__main--number {
+    color: black;
+}
+.tracking__main--info {
+    margin-bottom: 0;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+}
+.tracking__main--info-name {
+    color:#606975;
+}
+.tracking__step {
+    display: block;
+    width: 100%;
+    margin-bottom: 35px;
+    text-align: center
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tracking__step .step-icon-wrap {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    text-align: center
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.tracking__step .step-icon-wrap::before,
+.tracking__step .step-icon-wrap::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 3px;
+    margin-top: -1px;
+    background-color: #e1e7ec;
+    content: '';
+    z-index: 1
 }
 
-.App-link {
-  color: #61dafb;
+.tracking__step .step-icon-wrap::before {
+    left: 0
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tracking__step .step-icon-wrap::after {
+    right: 0
+}
+
+.tracking__step .step-icon {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #e1e7ec;
+    border-radius: 10%;
+    background-color: #f5f5f5;
+    color: black;
+    font-size: 38px;
+    line-height: 81px;
+    z-index: 5
+}
+
+.tracking__step .step-title {
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500
+}
+
+.tracking__step:first-child .step-icon-wrap::before {
+    display: none
+}
+
+.tracking__step:last-child .step-icon-wrap::after {
+    display: none
+}
+
+.tracking__step.completed .step-icon-wrap::before,
+.tracking__step.completed .step-icon-wrap::after {
+    background-color: green
+}
+
+.tracking__step.completed .step-icon {
+    border-color: green;
+    background-color: green;
+    color: #fff
+}
+
+@media (max-width: 576px) {
+    .flex-sm-nowrap .tracking__step .step-icon-wrap::before,
+    .flex-sm-nowrap .tracking__step .step-icon-wrap::after {
+        display: none
+    }
+}
+
+@media (max-width: 768px) {
+    .flex-md-nowrap .tracking__step .step-icon-wrap::before,
+    .flex-md-nowrap .tracking__step .step-icon-wrap::after {
+        display: none
+    }
+}
+
+@media (max-width: 991px) {
+    .flex-lg-nowrap .tracking__step .step-icon-wrap::before,
+    .flex-lg-nowrap .tracking__step .step-icon-wrap::after {
+        display: none
+    }
+}
+
+@media (max-width: 1200px) {
+    .flex-xl-nowrap .tracking__step .step-icon-wrap::before,
+    .flex-xl-nowrap .tracking__step .step-icon-wrap::after {
+        display: none
+    }
+}
+
+.bg-faded, .bg-secondary {
+    background-color: #f5f5f5 !important;
 }
